@@ -4,9 +4,6 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-
-	<!-- Basic Page Needs
-  ================================================== -->
 	<meta charset="utf-8" />
 	<title>tunr</title>
 	<meta name="description" content="Tunr is a html and javascript podcast player. It sotres it state in cookies, so it can continue playing from where you left off if the page is reloaded ore you navigate back to it for some reason. ">
@@ -14,22 +11,8 @@
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	
-	<!-- Mobile Specific Metas
-  ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />     
-	<!-- CSS
-  ================================================== -->
-
-	<link rel="stylesheet" href="static/app.css">
-	
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="static/favicon.ico">
-	<link rel="apple-touch-icon" href="static/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="static/apple-touch-icon-72x72.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="static/apple-touch-icon-114x114.png" />
-	
+	<link rel="stylesheet" href="static/app.css">	
 </head>
 <body>
 
@@ -39,11 +22,16 @@
         <dl id="playlist">
         </dl>
         <div id="sleep-mode-container">
-            <input id="sleep-mode" name="sleep-mode" type="checkbox" /> Sleep Mode (does not play next track automatically)
+            <input id="sleep-mode" name="sleep-mode" type="checkbox" /> 
+            Sleep Mode <small>(tunr will not play the next track automatically)</small>
         </div>
     </div>
 
-    <div id="summary"></div>
+    <div id="summary-container">
+
+	    <p><a href="https://twitter.com/share" class="twitter-share-button" data-text="I am listening to" data-count="horizontal">Tweet</a></p>
+	    <div id="summary"></div>
+	</div>
 
     <div id="audio-player" role="main">
         <div id="current">select show to begin playing</div><div id="time">00:00:00 of 00:00:00</div>
@@ -57,13 +45,13 @@
 	</footer>
 
 
-		
+
 		
 	<!-- JS
 	================================================== -->
     <script src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
     <script src="static/app.min.js"></script>
-	
+	<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 
 	
 <!-- End Document

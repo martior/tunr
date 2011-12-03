@@ -20,10 +20,10 @@ a.button:active,button:active,input[type="submit"]:active,input[type="reset"]:ac
 dt{font-size:10px;line-height:12px;color:#777;font-style:italic;}
 dd{font-size:12px;line-height:22px;color:#777;}
 .dateSeparator{margin-top:15px;}
-.currentPlaylistItem{font-weight:bold;background-color:#CCC;}
+.currentPlaylistItem{font-weight:bold;borter:1px solid #eee;}
 #playpause{width:60px;}
-#playlist-container{width:320px;position:absolute;left:0px;top:80px;}
-#playlist dd,#playlist dt{padding-left:30px;}
+#playlist-container{width:320px;position:absolute;left:0px;top:80px;border-right:1px solid #eee;}
+#playlist dd,#playlist dt{padding-left:30px;line-height:30px;}
 #sleep-mode-container{padding-left:30px;font-size:10px;color:#777;padding-bottom:30px;}
-#summary{font-size:12px;color:#777;width:320px;position:absolute;left:320px;top:80px;padding:1em;}
+#summary-container{font-size:12px;color:#777;width:320px;position:absolute;left:320px;top:80px;padding:1em;}
 footer{position:fixed;left:0px;bottom:0px;background-color:white;width:100%;padding:0px;text-align:center;font-size:10px;color:#777;margin:0px;padding:0px;border-top:1px solid #CCC;}footer h1{font-size:14px;display:inline;margin:0;padding:0px;line-height:14px;}

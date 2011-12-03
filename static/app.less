@@ -158,16 +158,25 @@ dd {
     }
 .currentPlaylistItem{
     font-weight: bold; 
-    background-color: #CCC;}
+	borter: 1px solid #eee; /* Old browsers */
+
+    }
 
 #playpause{
     width: 60px;
     }
 
-#playlist-container{width: 320px; position: absolute; left: 0px; top: 80px;}
+#playlist-container{
+    width: 320px; 
+    position: absolute; 
+    left: 0px; 
+    top: 80px; 
+    border-right: 1px solid #eee;
+    }
 #playlist dd,
 #playlist dt{
     padding-left: 30px;
+    line-height: 30px;
 }
 #sleep-mode-container{
     padding-left: 30px;
@@ -176,12 +185,13 @@ dd {
     padding-bottom:30px;
 }
 
-#summary{
+#summary-container{
     font-size: 12px; 
     color: #777;
     width: 320px;
     position: absolute; left: 320px; top: 80px;
-    padding: 1em;}
+    padding: 1em;
+    }
     
 
 footer{position: fixed; left: 0px; bottom: 0px; 
