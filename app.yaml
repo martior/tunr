@@ -12,6 +12,8 @@ handlers:
 #  script: src/oneoff.py
 - url: /feed/.*
   script: src/feed.py
+- url: /json/.*
+  script: src/main.py
 #- url: /remote_api
 #  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
 #  login: admin
@@ -19,9 +21,8 @@ handlers:
   static_files: static/index.html
   upload: static/(.*\.(html))
 - url: .*
-  script: src/main.py
-
-
+  static_dir: static
+  
   
 builtins:
   - datastore_admin: on

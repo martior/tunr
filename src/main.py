@@ -69,6 +69,7 @@ class FileJson(webapp.RequestHandler):
             query.filter("feed IN",station.feeds)
         query.order('-published')
         files = query.fetch(limit=50)
+        self.response.headers['Access-Control-Allow-Origin'] = '*'
         for item in files:
             playlist.append({u"name":unicode(item.title),u"mp3":unicode(item.url),u"date":item.published.strftime("%b %d %Y"),"id":item.key().id(),"summary":item.summary})
         self.response.out.write(simplejson.dumps(playlist))

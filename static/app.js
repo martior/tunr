@@ -191,7 +191,7 @@ showPlaylist = function(key) {
         }
         if (current_playlist_item==null){
             playPlaylistItem($(".playlistItem").first());
-            pasue();
+            pause();
         }
     });
 }
