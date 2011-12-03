@@ -169,7 +169,7 @@ playThis = function(event) {
 
 
 showPlaylist = function(key) {
-    $.getJSON('/json/files?stationid=' + key,
+    $.getJSON('http://r.tunr.in/json/files?stationid=' + key,
     function(data) {
         HTMLmarkup = ""
         var date = null;
