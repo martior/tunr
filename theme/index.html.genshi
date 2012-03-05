@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
 	<meta charset="utf-8" />
-	<title>tunr</title>
+	<title>$feed.config.name</title>
 	<meta name="description" content="Tunr is a html and javascript podcast player. Using cookies, it stores what pdocast you are currently playing and how far you have gotten in all current podcasts. This means that it can continue playing from where you left off if the page is reloaded or the next time you visit. ">
 	<meta name="author" content="Martin Reistadbakk">
 	<!--[if lt IE 9]>
@@ -13,6 +13,34 @@
 <body>
     <div id="playlist-container">
         <dl id="playlist">
+			<py:for each="entry in entries">
+			<div class="channelgroup" py:strip="not entry.new_date">
+				<h2 py:if="entry.new_date">$entry.new_date</h2>
+
+				<div class="entrygroup" py:strip="not entry.new_feed">
+					<h3 py:if="entry.new_feed">
+						<a class="link-plain" href="$entry.link" title="$entry.source.title">$entry.source.config.name:
+						<span py:if="entry.title" lang="$entry.title_detail.language">
+							$entry.title_detail.stream
+						</span>
+						</a>
+					</h3>
+
+					<p class="discreet">
+						<py:if test="entry.author_detail and entry.author_detail.name">
+						by $entry.author_detail.name at </py:if> $entry.updated
+					</p>
+
+					<div class="entry">
+						<div class="tileBody" py:choose="">
+							<py:when test="entry.content">${entry.content[0].stream}</py:when>
+							<py:when test="entry.summary_detail">${entry.summary_detail.stream}</py:when>
+						</div>
+					</div>
+				</div>
+			</div>
+			</py:for>
+			
         </dl>
         <div id="sleep-mode-container">
             <input id="sleep-mode" name="sleep-mode" type="checkbox" /> 
@@ -31,7 +59,7 @@
 	    <audio id="main_audio" >Audio</audio>
     </div>
 	<footer>
-        <h1 id="logo">tunr</h1> © <a href="http://twitter.com/martior">Martin Reistadbakk</a> 2011  <a href="mailto:martin@reistadbakk.com">✉</a>
+        <h1 id="logo">tunr</h1> © <a href="http://twitter.com/martior">Martin Reistadbakk</a> 2011  <a href="mailto:martin@reistadbakk.com">✉</a><small> <small>Last updated: $feed.updated</small>
 	</footer>
     <script src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
     <script src="app.js"></script>
