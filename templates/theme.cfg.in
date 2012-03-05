@@ -14,8 +14,4 @@ template_directories:
 bill_of_materials:
 	app.css
 	app.js
-	app.min.js
 	favicon.ico
-	images/feed-icon-10x10.png
-	images/logo.png
-	images/venus.png
