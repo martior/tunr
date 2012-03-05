@@ -168,39 +168,11 @@ playThis = function(event) {
 }
 
 
-showPlaylist = function(key) {
-    $.getJSON('http://r.tunr.in/json/files?stationid=' + key,
-    function(data) {
-        HTMLmarkup = ""
-        var date = null;
-        for (i = 0; i < data.length; i++) {
-            current_date = new Date(data[i].date);
-            if (date == null ||  (date.getTime() != current_date.getTime())) {
-                date = current_date;
-                HTMLmarkup += '<dt class="dateSeparator">' + data[i].date + '</dt>';
-            }
-            HTMLmarkup += '<dd data-src="' + data[i].mp3 + '"id="'+key+'-'+data[i].id+'" data-id="' + data[i].id + '" class="playlistItem" >' + data[i].name + '</dd>';
-            summaries[data[i].id]=data[i].summary;
-        };
-        $('#playlist').empty()
-        $('#playlist').append(HTMLmarkup);            
-        $('.playlistItem').click(playThis);
-        if (current_playlist_item==null){
-            playPlaylistItem( $("#"+readCookie("current_audio_id")));
-            pause();
-        }
-        if (current_playlist_item==null){
-            playPlaylistItem($(".playlistItem").first());
-            pause();
-        }
-    });
-}
-
-
 $(document).ready(
 function() {
     $("#play").click(play);
     $("#pause").click(pause);
+	$('.playlistItem').click(playThis);
     audio_tag = $("#main_audio");
     audio_tag.bind('end', playNext, false);
     audio_tag.bind('timeupdate', updateTime, false);
@@ -228,6 +200,13 @@ function() {
        
        
     });
-    showPlaylist();
+    if (current_playlist_item==null){
+        playPlaylistItem( $("#"+readCookie("current_audio_id")));
+        pause();
+    }
+    if (current_playlist_item==null){
+        playPlaylistItem($(".playlistItem").first());
+        pause();
+    }
 
 });

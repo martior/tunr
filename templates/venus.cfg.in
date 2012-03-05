@@ -1,12 +1,3 @@
-# ♀ Planet Venus for Plone — Planet Configuration
-# ===============================================
-#
-# Configuration for Planet Venus for Plone feeds.
-#
-# venus.cfg.in → venus.cfg.top + feeds.cfg → venus.cfg
-#
-# —Sean Kelly, kelly@seankelly.biz, Plone AI Team
-
 [Planet]
 name            = Planet Plone
 link            = http://planet.plone.org/
