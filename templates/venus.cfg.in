@@ -1,9 +1,9 @@
 [Planet]
-name            = Planet Plone
-link            = http://planet.plone.org/
-owner_name      = Plone Website Team
-owner_email     = plone-website@lists.sourceforge.net
+name            = Tunr
+link            = http://tunr.in
+owner_name      = Martin Reistadbakk
+owner_email     = martin@reistadbakk.com
 output_theme    = ${buildout:directory}/theme
 output_dir      = ${buildout:htdocs-directory}
 cache_directory = ${buildout:directory}/var/cache
-items_per_page  = 15
+items_per_page  = 25
